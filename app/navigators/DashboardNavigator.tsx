@@ -45,7 +45,7 @@ export function DashboardNavigator() {
       screenOptions={{
         headerShown: false,
         tabBarHideOnKeyboard: true,
-        tabBarStyle: [$tabBar, { height: bottom + 70 }],
+        tabBarStyle: [$tabBar, { height: bottom + 80 }],
         tabBarActiveTintColor: colors.text,
         tabBarInactiveTintColor: colors.text,
         tabBarLabelStyle: $tabBarLabel,
@@ -58,7 +58,11 @@ export function DashboardNavigator() {
         options={{
           tabBarLabel: commonConstants.CHARGING_STATIONS,
           tabBarIcon: ({ focused }) => (
-            <Icon icon="view" color={focused ? colors.tint : undefined} size={30} />
+            <Icon
+              icon="location"
+              color={focused ? colors.palette.primary400 : undefined}
+              size={30}
+            />
           ),
         }}
       />
@@ -68,7 +72,7 @@ export function DashboardNavigator() {
         options={{
           // tabBarLabel: commonConstants.CHARGING_STATIONS,
           tabBarIcon: ({ focused }) => (
-            <Icon icon="menu" color={focused ? colors.darkest : undefined} size={30} />
+            <Icon icon="menu" color={focused ? colors.palette.primary400 : undefined} size={30} />
           ),
         }}
       />
@@ -79,7 +83,7 @@ export function DashboardNavigator() {
         options={{
           // tabBarLabel: commonConstants.CHARGING_STATIONS,//  to change the name of the bottom tab label
           tabBarIcon: ({ focused }) => (
-            <Icon icon="bell" color={focused ? colors.tint : undefined} size={30} />
+            <Icon icon="bell" color={focused ? colors.palette.primary400 : undefined} size={30} />
           ),
         }}
       />
@@ -89,7 +93,11 @@ export function DashboardNavigator() {
         options={{
           // tabBarLabel: commonConstants.CHARGING_STATIONS,//  to change the name of the bottom tab label
           tabBarIcon: ({ focused }) => (
-            <Icon icon="settings" color={focused ? colors.tint : undefined} size={30} />
+            <Icon
+              icon="settings"
+              color={focused ? colors.palette.primary400 : undefined}
+              size={30}
+            />
           ),
         }}
       />
@@ -98,12 +106,19 @@ export function DashboardNavigator() {
 }
 
 const $tabBar: ViewStyle = {
-  backgroundColor: colors.background,
-  borderTopColor: colors.transparent,
+  position: "absolute",
+  backgroundColor: colors.palette.primary100,
+  borderTopWidth: 0,
+  elevation: 0,
+  borderTopColor: "transparent",
+  bottom: 25,
+  left: 20,
+  right: 20,
+  borderRadius: 15,
 }
 
 const $tabBarItem: ViewStyle = {
-  paddingTop: spacing.md,
+  paddingTop: spacing.xxxs,
 }
 
 const $tabBarLabel: TextStyle = {

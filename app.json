@@ -23,6 +23,9 @@
     "android": {
       "icon": "./assets/images/app-icon-android-legacy.png",
       "package": "com.kantai",
+      "config": {
+        "googleMaps": { "apiKey": "AIzaSyBWJqOz1Cm77t6YuYcTFHEtUFE5klLA8Z0" }
+      },
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/app-icon-android-adaptive-foreground.png",
         "backgroundImage": "./assets/images/app-icon-android-adaptive-background.png"
@@ -30,7 +33,7 @@
       "splash": {
         "image": "./assets/images/splash-logo-android-universal.png",
         "resizeMode": "contain",
-        "backgroundColor": "#191015"
+        "backgroundColor": "#fcfcfc"
       }
     },
     "ios": {
@@ -52,6 +55,11 @@
         "backgroundColor": "#191015"
       },
       "bundler": "metro"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "f500a02d-f207-4c3e-8429-eb8b98e65919"
+      }
     },
     "plugins": [
       "expo-localization",
