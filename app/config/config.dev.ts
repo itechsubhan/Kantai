@@ -6,5 +6,6 @@
  * https://reactnative.dev/docs/security#storing-sensitive-info
  */
 export default {
-  API_URL: "https://api.rss2json.com/v1/",
+  API_URL: "https://api.api-ninjas.com/v1/airlines",
+  BACKEND_ADDRESS: "https://localhost:3000/",
 }

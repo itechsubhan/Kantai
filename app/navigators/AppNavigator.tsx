@@ -45,7 +45,8 @@ export type AppStackParamList = {
   Logout: undefined
   Dashboard: NavigatorScreenParams<DashboardNavigatorParamList>
   Login: undefined
-  // IGNITE_GENERATOR_ANCHOR_APP_STACK_PARAM_LIST
+  SignUp: undefined
+	// IGNITE_GENERATOR_ANCHOR_APP_STACK_PARAM_LIST
 }
 
 /**
@@ -83,6 +84,7 @@ StatusBar.setHidden(true);
       ) : (
         <>
           <Stack.Screen name="Login" component={Screens.LoginScreen} />
+          <Stack.Screen name="SignUp" component={Screens.SignUpScreen} />
         </>
       )}
 
@@ -94,7 +96,8 @@ StatusBar.setHidden(true);
       {/* <Stack.Screen name="TxnDetails" component={Screens.TxnDetailsScreen} /> */}
 
       {/* <Stack.Screen name="Login" component={Screens.LoginScreen} /> */}
-      {/* IGNITE_GENERATOR_ANCHOR_APP_STACK_SCREENS */}
+      {/* <Stack.Screen name="SignUp" component={Screens.SignUpScreen} /> */}
+			{/* IGNITE_GENERATOR_ANCHOR_APP_STACK_SCREENS */}
     </Stack.Navigator>
   )
 })

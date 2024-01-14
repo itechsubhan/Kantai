@@ -3,7 +3,7 @@ import React, { ComponentType, FC, useEffect, useMemo, useRef, useState } from "
 import { TextInput, TextStyle, ViewStyle } from "react-native"
 import { Button, Icon, Screen, Text, TextField, TextFieldAccessoryProps } from "../components"
 import { useStores } from "../models"
-import { AppStackScreenProps } from "../navigators"
+import { AppStackScreenProps, navigate } from "../navigators"
 import { colors, spacing } from "../theme"
 
 interface LoginScreenProps extends AppStackScreenProps<"Login"> {}
@@ -22,8 +22,8 @@ export const LoginScreen: FC<LoginScreenProps> = observer(function LoginScreen(_
   useEffect(() => {
     // Here is where you could fetch credentials from keychain or storage
     // and pre-fill the form fields.
-    setAuthEmail("example@mail.com")
-    setAuthPassword("example-Password")
+    setAuthEmail("")
+    setAuthPassword("")
 
     // Return a "cleanup" function that React will run when the component unmounts
     return () => {
@@ -40,7 +40,8 @@ export const LoginScreen: FC<LoginScreenProps> = observer(function LoginScreen(_
 
     if (validationError) return
 
-    // Make a request to your server to get an authentication token.
+    // TODO: Make a request to your server to get an authentication token.
+
     // If successful, reset the fields and set the token.
     setIsSubmitted(false)
     setAuthPassword("")
@@ -48,6 +49,16 @@ export const LoginScreen: FC<LoginScreenProps> = observer(function LoginScreen(_
 
     // We'll mock this with a fake token.
     setAuthToken(String(Date.now()))
+  }
+  function goToSignUp() {
+      navigate("SignUp")
+  }
+  function googleAuth() {
+    // https://cloud.appwrite.io/v1/account/sessions/oauth2/callback/google/65894a736d977d41ef2e
+  }
+  function facebookAuth() {
+    
+    // https://cloud.appwrite.io/v1/account/sessions/oauth2/callback/facebook/65894a736d977d41ef2e
   }
 
   const PasswordRightAccessory: ComponentType<TextFieldAccessoryProps> = useMemo(
@@ -113,6 +124,24 @@ export const LoginScreen: FC<LoginScreenProps> = observer(function LoginScreen(_
         style={$tapButton}
         preset="reversed"
         onPress={login}
+      />
+      <Text text="No account, Lets Get you set up" preset="subheading" style={$enterDetails} />
+      <Button
+        testID="signUpRoute"
+        text="Sign Up"
+        style={$tapButton}
+        preset="reversed"
+        onPress={goToSignUp}
+        />
+      <Button
+        testID="googleAuth"
+        text="Sign up with Google"
+        onPress={googleAuth}
+      />
+      <Button
+        testID="facebookAuth"
+        text= "Sign up with Facebook"
+        onPress={facebookAuth}
       />
     </Screen>
   )
